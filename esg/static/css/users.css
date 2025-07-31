@@ -1,0 +1,248 @@
+@media screen and (min-width: 1240px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
+.l_sub_users.l_sub_login .wrap {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 40px 35px;
+  border-top: 2px solid #e4e4e4;
+  border-bottom: 2px solid #e4e4e4;
+}
+.l_sub_users.l_sub_login .wrap > div {
+  width: 50%;
+}
+.l_sub_users.l_sub_login .wrap .wrap_form {
+  padding-right: 70px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.l_sub_users.l_sub_login .wrap .wrap_form::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #e4e4e4;
+}
+.l_sub_users.l_sub_login .wrap .wrap_form .wrap_check {
+  margin-top: 30px;
+}
+.l_sub_users.l_sub_login .wrap .wrap_form .btn {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.l_sub_users.l_sub_login .wrap .wrap_notice {
+  padding-top: 24px;
+  padding-left: 70px;
+  padding-right: 42px;
+}
+.l_sub_users.l_sub_login .wrap .wrap_notice p {
+  line-height: 24px;
+  padding-left: 10px;
+  color: #555;
+  position: relative;
+  word-break: keep-all;
+}
+.l_sub_users.l_sub_login .wrap .wrap_notice p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #555;
+}
+.l_sub_users.l_sub_login .wrap .wrap_notice p + p {
+  margin-top: 16px;
+}
+.l_sub_users.l_sub_join .wrap {
+  margin-top: 80px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy {
+  border-radius: 12px;
+  border: 2px solid #e4e4e4;
+  padding: 0 18px 0 38px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy {
+  margin-top: 38px;
+  margin-bottom: 38px;
+  padding-right: 20px;
+  height: 460px;
+  overflow-y: scroll;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar:vertical {
+  width: 6px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar-thumb {
+  background-color: #c6c6c6;
+  border-radius: 12px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy h3 + h3 {
+  margin-top: 40px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy p + h3 {
+  margin-top: 35px;
+}
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy p,
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy ol,
+.l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy ul {
+  margin-top: 18px;
+  word-break: keep-all;
+  line-height: 24px;
+  font-size: 16px;
+}
+.l_sub_users.l_sub_join .wrap .box .agree {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 24px;
+}
+.l_sub_users.l_sub_join .wrap .box .agree p {
+  font-size: 16px;
+  color: #1d1d1d;
+  font-weight: 500;
+}
+.l_sub_users.l_sub_join .wrap .box + .box {
+  margin-top: 40px;
+}
+.l_sub_users.l_sub_join .wrap .btn {
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 960px) {
+  .l_sub_users.l_sub_login .wrap {
+    margin-top: 2.5rem;
+    padding: 2.5rem 0;
+  }
+  .l_sub_users.l_sub_login .wrap > div {
+    width: 100%;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_form {
+    padding-right: 0;
+    padding-bottom: 2.5rem;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_form::after {
+    display: none;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_form .wrap_check {
+    margin-top: 1.666rem;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_form .btn {
+    margin-top: 1.666rem;
+    margin-bottom: 1.666rem;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_notice {
+    border-top: 2px solid #e4e4e4;
+    padding-top: 2.291rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_notice p {
+    font-size: 1rem;
+    line-height: 1.541rem;
+    padding-left: 0.416rem;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_notice p::before {
+    top: 0.729rem;
+    width: 0.166rem;
+    height: 0.166rem;
+  }
+  .l_sub_users.l_sub_login .wrap .wrap_notice p + p {
+    margin-top: 0.833rem;
+  }
+  .l_sub_users.l_sub_join .wrap {
+    margin-top: 4.166rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy {
+    border-radius: 0.5rem;
+    padding: 0 1.562rem 0 1.666rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy {
+    margin-top: 1.562rem;
+    margin-bottom: 1.562rem;
+    padding-right: 0px;
+    height: 19.166rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar:vertical {
+    width: 0.25rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy h3 {
+    font-size: 1.5rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy h3 + h3 {
+    margin-top: 1.666rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy p + h3 {
+    margin-top: 1.395rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy p,
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy ol,
+  .l_sub_users.l_sub_join .wrap .box .wrap_privacy .privacy ul {
+    margin-top: 0.562rem;
+    line-height: 1.541rem;
+    font-size: 1rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .agree {
+    margin-top: 1.666rem;
+    border-radius: 0.333rem;
+    padding: 1.666rem 0;
+    flex-direction: column;
+  }
+  .l_sub_users.l_sub_join .wrap .box .agree p {
+    font-size: 1rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box .agree .wrap_radio {
+    margin-top: 1rem;
+  }
+  .l_sub_users.l_sub_join .wrap .box + .box {
+    margin-top: 3.958rem;
+  }
+  .l_sub_users.l_sub_join .wrap .btn {
+    margin-top: 2.5rem;
+  }
+}

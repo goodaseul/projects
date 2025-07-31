@@ -1,0 +1,205 @@
+.wrap_input {
+    label {
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 8px;
+    }
+    input {
+        border: 1px solid;
+        border-radius: 6px;
+        border-color: #c6c6c6;
+        font-size: 18px;
+        width: 100%;
+        height: 48px;
+
+        margin-top: 8px;
+        padding: 0 16px;
+        color: #717171;
+
+        &::placeholder {
+            color: #c6c6c6;
+        }
+        &:focus {
+            border-color: #717171;
+        }
+        &:disabled {
+            background-color: #d8d8d8;
+            border-color: #8e8e8e;
+        }
+    }
+
+    .error_msg {
+        display: none;
+        font-size: 14px;
+        color: #e4543c;
+        margin: 8px 0;
+        align-items: center;
+
+        .icon {
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+            background-image: url(#{$url-images}common/icon_error.png);
+        }
+    }
+    &.error {
+        .error_msg {
+            display: flex;
+        }
+        input {
+            border-color: #de3412;
+            border-width: 2px;
+        }
+    }
+
+    + .wrap_input {
+        margin-top: 30px;
+    }
+}
+.wrap_check {
+    display: inline-block;
+    .check_box {
+        input[type="checkbox"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        input + label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #1d1d1d;
+            font-size: 18px;
+            &::before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                background: url(#{$url-images}common/icon_check.png) no-repeat 0 0 / contain;
+            }
+        }
+        input:disabled + label {
+            color: #8e8e8e;
+            &::before {
+                background: url(#{$url-images}common/icon_check_disabled.png) no-repeat 0 0 / contain;
+            }
+        }
+        input:checked + label {
+            &::before {
+                background-image: url(#{$url-images}common/icon_check_on.png);
+            }
+        }
+        input:checked:disabled + label {
+            color: #8e8e8e;
+            &::before {
+                background: url(#{$url-images}common/icon_check_on_disabled.png) no-repeat 0 0 / contain;
+            }
+        }
+    }
+}
+.wrap_radio {
+    .radio_box {
+        input[type="radio"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        input + label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #2d2d2d;
+            font-size: 16px;
+            &::before {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+                background: url(#{$url-images}common/icon_radio.png) no-repeat 0 0 / contain;
+            }
+        }
+        input:disabled + label {
+            color: #8e8e8e;
+            &::before {
+                background: url(#{$url-images}common/icon_radio_disabled.png) no-repeat 0 0 / contain;
+            }
+        }
+        input:checked + label {
+            &::before {
+                background-image: url(#{$url-images}common/icon_radio_on.png);
+            }
+        }
+        input:checked:disabled + label {
+            color: #8e8e8e;
+            &::before {
+                background: url(#{$url-images}common/icon_radio_on_disabled.png) no-repeat 0 0 / contain;
+            }
+        }
+    }
+}
+@media screen and (max-width: 960px) {
+    .wrap_input {
+        label {
+            font-size: rem(48px);
+            padding-bottom: rem(30px);
+        }
+        input {
+            border-radius: rem(16px);
+            font-size: rem(56px);
+            height: rem(160px);
+
+            margin-top: rem(30px);
+            padding: 0 rem(50px);
+        }
+
+        .error_msg {
+            font-size: rem(46px);
+            margin: rem(30px) 0;
+            .icon {
+                margin-right: rem(10px);
+                width: rem(48px);
+                height: rem(48px);
+            }
+        }
+        + .wrap_input {
+            margin-top: rem(80px);
+        }
+    }
+    .wrap_check {
+        .check_box {
+            input + label {
+                font-size: rem(48px);
+                &::before {
+                    width: rem(52px);
+                    height: rem(52px);
+                    margin-right: rem(15px);
+                }
+            }
+        }
+    }
+    .wrap_radio {
+        .radio_box {
+            input + label {
+                font-size: rem(48px);
+                &::before {
+                    content: "";
+                    width: rem(52px);
+                    height: rem(52px);
+                    margin-right: rem(16px);
+                }
+            }
+        }
+    }
+}
