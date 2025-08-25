@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
+    // 처음부터 다시해보기
     const [laws, setLaws] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
 
