@@ -1,39 +1,38 @@
 "use client";
-
+import { LsStmdSearch } from "@/types/law";
 import { useEffect, useState } from "react";
-
+// step2 검색창 + 목록 + 클릭 시 상세보기
 export default function Home() {
-    // 처음부터 다시해보기
-    const [laws, setLaws] = useState<any[]>([]);
-    const [loading, setLoading] = useState(false);
-
+    const [data, setData] = useState<LsStmdSearch | null>(null);
     useEffect(() => {
-        setLoading(true);
-        fetch("/api/law?query=근로기준법")
+        fetch("/api/law")
             .then((res) => res.json())
-            .then((data) => {
-                setLaws(data.law || []); // law 배열이 있으면 넣기
-                setLoading(false);
+            .then((d) => {
+                console.log("API Response:", d);
+                setData(d);
             })
-            .catch(() => setLoading(false));
+            .catch((err) => console.error("Fetch error:", err));
     }, []);
 
     return (
-        <div style={{ padding: 20 }}>
-            <h1>법령 검색 결과</h1>
-            {loading ? (
-                <p>불러오는 중...</p>
-            ) : (
-                <ul>
-                    {laws.map((law) => (
-                        <li key={law.법령일련번호}>
-                            <a href={`https://www.law.go.kr${law.법령상세링크}`} target="_blank" rel="noreferrer">
-                                {law.법령명한글}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
+        <main>
+            <h1>법령 데이터</h1>
+            {/* 
+                전체 데이터 뿌리기
+                <pre>{JSON.stringify(data, null, 2)}</pre> 
+            */}
+
+            {data?.LsStmdSearch?.law?.map((item, key) => {
+                console.log(data);
+                return (
+                    <div key={key} className="p-2 border-b cursor-pointer hover:bg-gray-50">
+                        <p>{item.공포일자}</p>
+                        <h2 className="font-bold">{item.법령명}</h2>
+                        <p>시행일자: {item.시행일자}</p>
+                        <p>공포일자: {item.공포일자}</p>
+                    </div>
+                );
+            })}
+        </main>
     );
 }
