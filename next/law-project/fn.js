@@ -4,6 +4,22 @@ const fn = {
     thorwErr: () => {
         throw new Error("XX");
     },
+    getName: (callback) => {
+        const name = "Mike";
+        setTimeout(() => {
+            callback(name);
+            // throw new Error("서버 에러..");
+        }, 3000);
+    },
+    getAge: () => {
+        const age = 30;
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                res(age);
+                // rej('error')
+            }, 3000);
+        });
+    },
 };
 
 module.exports = fn;

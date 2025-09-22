@@ -72,3 +72,33 @@ test("유저 리스트에 Mike가 있나?", () => {
 test("이거 에러 나나요?", () => {
     expect(() => fn.thorwErr()).toThrow("XX");
 });
+
+test("3초 후에 받아온 이름은 Mike", (done) => {
+    function callback(name) {
+        try {
+            expect(name).toBe("Mike");
+            done();
+        } catch (error) {
+            done();
+        }
+    }
+    fn.getName(callback);
+});
+
+test("3초 후에 받아온 나이는 30", async () => {
+    // @@promise
+
+    // return fn.getAge().then((age) => {
+    //     expect(age).toBe(30);
+    // });
+
+    // @@ resolves, rejects
+
+    // return expect(fn.getAge()).resolves.toBe(30);s
+    // return expect(fn.getAge()).rejects.toMatch("error");
+    // or?
+    // await expect(fn.getAge()).rejects.toMatch("error");
+
+    const age = await fn.getAge();
+    expect(age).toBe(30);
+});
