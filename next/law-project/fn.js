@@ -4,6 +4,7 @@ const fn = {
     thorwErr: () => {
         throw new Error("XX");
     },
+
     getName: (callback) => {
         const name = "Mike";
         setTimeout(() => {
@@ -18,6 +19,48 @@ const fn = {
                 res(age);
                 // rej('error')
             }, 3000);
+        });
+    },
+
+    createUser: (name) => {
+        console.log("실제로 사용자가 생성되었습니다.");
+        return {
+            name,
+        };
+    },
+    connectUserDb: () => {
+        return new Promise((res) => {
+            setTimeout(() => {
+                res({
+                    name: "Mike",
+                    age: 30,
+                    gender: "male",
+                });
+            }, 500);
+        });
+    },
+    disconnectDb: () => {
+        return new Promise((res) => {
+            setTimeout(() => {
+                res();
+            }, 500);
+        });
+    },
+    connectCarDb: () => {
+        return new Promise((res) => {
+            setTimeout(() => {
+                res({
+                    brand: "BMW",
+                    color: "Yellow",
+                });
+            }, 500);
+        });
+    },
+    disconnectCarDb: () => {
+        return new Promise((res) => {
+            setTimeout(() => {
+                res();
+            }, 500);
         });
     },
 };
