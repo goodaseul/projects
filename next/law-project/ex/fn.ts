@@ -1,11 +1,11 @@
-const fn = {
-    add: (num1, num2) => num1 + num2,
-    makeUser: (name, age) => ({ name, age, gender: undefined }),
+const fn: fnType = {
+    add: (num1: any, num2: any) => num1 + num2,
+    makeUser: (name: string, age: number, gender?: string) => ({ name, age, gender }),
     thorwErr: () => {
         throw new Error("XX");
     },
 
-    getName: (callback) => {
+    getName: (callback: (arg0: string) => void) => {
         const name = "Mike";
         setTimeout(() => {
             callback(name);
@@ -22,7 +22,7 @@ const fn = {
         });
     },
 
-    createUser: (name) => {
+    createUser: (name: any) => {
         console.log("실제로 사용자가 생성되었습니다.");
         return {
             name,
@@ -40,7 +40,7 @@ const fn = {
         });
     },
     disconnectDb: () => {
-        return new Promise((res) => {
+        return new Promise<void>((res) => {
             setTimeout(() => {
                 res();
             }, 500);
@@ -57,7 +57,7 @@ const fn = {
         });
     },
     disconnectCarDb: () => {
-        return new Promise((res) => {
+        return new Promise<void>((res) => {
             setTimeout(() => {
                 res();
             }, 500);
@@ -65,4 +65,27 @@ const fn = {
     },
 };
 
-module.exports = fn;
+interface fnType {
+    add: (num1: any, num2: any) => any;
+    makeUser: (
+        name: string,
+        age: number,
+        gender?: string
+    ) => {
+        name: string;
+        age: number;
+        gender: string | undefined;
+    };
+    thorwErr: () => never;
+    getName: (callback: (arg0: string) => void) => void;
+    getAge: () => Promise<unknown>;
+    createUser: (name: any) => {
+        name: any;
+    };
+    connectUserDb: () => Promise<unknown>;
+    disconnectDb: () => Promise<void>;
+    connectCarDb: () => Promise<unknown>;
+    disconnectCarDb: () => Promise<void>;
+}
+
+export default fn;
