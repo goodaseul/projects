@@ -1,7 +1,6 @@
 "use client";
 import { LsStmdSearch } from "@/types/law";
 import { useEffect, useState } from "react";
-import Hello from "./component/Hello";
 // step2 검색창 + 목록 + 클릭 시 상세보기
 export default function Home() {
     const [data, setData] = useState<LsStmdSearch | null>(null);
@@ -15,10 +14,6 @@ export default function Home() {
             .catch((err) => console.error("Fetch error:", err));
     }, []);
 
-    const user = {
-        name: "Mike",
-        age: 30,
-    };
     return (
         <main>
             <h1>법령 데이터</h1>
@@ -26,8 +21,6 @@ export default function Home() {
                 전체 데이터 뿌리기
                 <pre>{JSON.stringify(data, null, 2)}</pre> 
             */}
-
-            <Hello user={user} />
 
             {data?.LsStmdSearch?.law?.map((item, key) => {
                 console.log(data);
