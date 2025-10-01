@@ -20,9 +20,9 @@ const SearchBox = ({ addTodo }: IAddtodo) => {
         }
     };
     return (
-        <div>
-            <input type="text" value={inputValue} onChange={onChange} onKeyDown={onKeyDown} placeholder="Please Write your To-do list" />
-            <button type="button" onClick={onClick}>
+        <div className="flex flex-wrap justify-between w-full mt-10">
+            <input className="w-[80%] transition-all duration-150 ease-in-out border-b-2 focus-visible:outline-none p-3 text-lg focus:text-xl" name="todoname" type="text" value={inputValue} onChange={onChange} onKeyDown={onKeyDown} placeholder="Please Write your To-do list" />
+            <button className="p-3 w-[15%] rounded-sm shadow-xl transition-all duration-150 ease-in-out  bg-[rgba(255,255,255,0.8)] text-black hover:bg-white" type="button" onClick={onClick}>
                 클릭
             </button>
         </div>
