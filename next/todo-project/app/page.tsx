@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import Footer from "./components/Footer";
 import SearchBox from "./components/SearchBox";
 import TodoContent from "./components/TodoContent";
 
@@ -13,12 +12,9 @@ export interface Todo {
 }
 export default function Home() {
     // 앞으로 할 일
-    // 1. 다크모드
     // 2. 수정 시 Input
     //     - 1 수정했다면 수정한 걸로 수정
     //     - 2 수정안했다면 원래 걸로
-    // 3. 삭제
-    // 4. 캐시 저장
 
     const [todos, setTodos] = useState<Todo[]>([]);
     const addTodo = (newTodo: string) => {
@@ -27,16 +23,17 @@ export default function Home() {
     const toggleTodo = (id: number) => {
         setTodos((prev) => prev.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
     };
+    const roemoveTodo = (id: number) => {
+        setTodos((prev) => prev.filter((todo) => todo.id !== id));
+    };
     return (
-        <div className="items-center min-h-screen justify-items-center ">
-            <main className="w-screen h-screen pt-20 max-w-[90%] lg:max-w-[50%]">
-                <h1 className="text-6xl">To-do project.</h1>
+        <div className="flex justify-center w-screen pt-20">
+            <div className="w-screen pt-10 max-w-[90%] lg:max-w-[50%] ">
                 {/* input */}
                 <SearchBox addTodo={addTodo} />
                 {/* content */}
-                <TodoContent todos={todos} toggleTodo={toggleTodo} />
-            </main>
-            <Footer />
+                <TodoContent todos={todos} toggleTodo={toggleTodo} removeTodo={roemoveTodo} />
+            </div>
         </div>
     );
 }
