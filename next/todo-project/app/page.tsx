@@ -11,11 +11,6 @@ export interface Todo {
     completed: boolean;
 }
 export default function Home() {
-    // 앞으로 할 일
-    // 2. 수정 시 Input
-    //     - 1 수정했다면 수정한 걸로 수정
-    //     - 2 수정안했다면 원래 걸로
-
     const [todos, setTodos] = useState<Todo[]>([]);
     const addTodo = (newTodo: string) => {
         setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
@@ -26,13 +21,16 @@ export default function Home() {
     const roemoveTodo = (id: number) => {
         setTodos((prev) => prev.filter((todo) => todo.id !== id));
     };
+    const editTodo = (id: number, newText: string) => {
+        setTodos((prev) => prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo)));
+    };
     return (
         <div className="flex justify-center w-screen pt-20">
             <div className="w-screen pt-10 max-w-[90%] lg:max-w-[50%] ">
                 {/* input */}
                 <SearchBox addTodo={addTodo} />
                 {/* content */}
-                <TodoContent todos={todos} toggleTodo={toggleTodo} removeTodo={roemoveTodo} />
+                <TodoContent todos={todos} toggleTodo={toggleTodo} removeTodo={roemoveTodo} editTodo={editTodo} setTodos={setTodos} />
             </div>
         </div>
     );

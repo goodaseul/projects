@@ -13,7 +13,7 @@ const ThemeBtn = () => {
 
     return (
         <button className="block mt-5 ml-auto transition-all duration-300 cursor-pointer md:mt-auto md:mb-auto" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-            {theme === "dark" ? "🌙" : "☀️"}
+            {theme === "dark" ? "🕯️" : "💡"}
         </button>
     );
 };
