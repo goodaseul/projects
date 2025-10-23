@@ -1,26 +1,23 @@
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
+"use client";
 import SearchForm from "./components/SearchForm";
+import ProductList from "./components/ProductList";
+import { useEffect, useState } from "react";
+import axios from "@/app/lib/axios";
 
 export default function Home() {
+    const [products, setProdcuts] = useState([]);
+    async function getProducts() {
+        const res = await axios.get("/products");
+        setProdcuts(res.data.results);
+    }
+    useEffect(() => {
+        getProducts();
+    }, []);
     return (
         <div>
             <h1>Codeitmall</h1>
             <SearchForm initialValue={null} />
-            <ul>
-                <li>
-                    <Link href="/products/1">첫 번째 상품</Link>
-                </li>
-                <li>
-                    <Link href="/products/2">두 번째 상품</Link>
-                </li>
-                <li>
-                    <Link href="/products/3">세 번째 상품</Link>
-                </li>
-                <li>
-                    <Link href="https://codeit.kr">코드잇</Link>
-                </li>
-            </ul>
+            <ProductList products={products} />
         </div>
     );
 }
